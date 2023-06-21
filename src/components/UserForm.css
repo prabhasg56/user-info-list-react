@@ -1,0 +1,44 @@
+.new-user__controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  background-color: white;
+  width: 40%;
+  border-radius: 0.5rem ;
+  margin-left: 30%;
+}
+
+.new-user__control label {
+  display: flex;
+  font-weight: bold;
+  flex-direction: column;
+  text-align: auto;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.new-user__control input {
+    display: flex;
+    font-weight: bold;
+    flex-direction: column;
+    text-align: auto;
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+    width: 90%;
+    height: 20px;
+    border: 1px solid #ccc;
+  }
+
+  .btn {
+    background-color: darkgreen;
+    width: 90px;
+    height: 30px;
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+    border-radius: 0.2rem;
+    font-weight: bold;
+    font-size: medium;
+  }
