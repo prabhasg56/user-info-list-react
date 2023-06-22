@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./UserForm.css";
 import ErrorModal from "./Modal/ErrorModal";
 import Wrapper from "./Halper/Wrapper";
@@ -8,6 +8,7 @@ const UserForm = (props) => {
   const [age, setAge] = useState("");
   const [error, setError] = useState();
   const [modalOpen, setModalOpen] = useState(false);
+  const collegeName = useRef();
 
   const addName = (e) => {
     setName(e.target.value);
@@ -19,6 +20,7 @@ const UserForm = (props) => {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
+    const college = collegeName.current.value;
 
     if (name.trim().length === 0 || age.trim().length === 0) {
       setError({ title: "Invalid input", msg: "Please enter user details!" });
@@ -27,10 +29,11 @@ const UserForm = (props) => {
       setError({ title: "Invalid input", msg: "Please enter valid age(>0)" });
       setModalOpen(true);
     } else {
-      props.userLists(name, age);
+      props.userLists(name, age, college);
     }
 
     setName("");
+    collegeName.current.value = '';
     setAge("");
   };
 
@@ -44,6 +47,10 @@ const UserForm = (props) => {
           <div className="new-user__control">
             <label>Username</label>
             <input value={name} onChange={addName} />
+          </div>
+          <div className="new-user__control">
+            <label>College Name</label>
+            <input ref = {collegeName}/>
           </div>
           <div className="new-user__control">
             <label>Age(Years)</label>

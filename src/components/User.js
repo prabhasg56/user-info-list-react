@@ -5,9 +5,9 @@ import UserList from "./UserList";
 const User = () => {
   const [enteredUser, setEnteredUser] = useState([]);
 
-  const onSubmitHandle = (uName, uAge) => {
+  const onSubmitHandle = (uName, uAge, uCollegeName) => {
       setEnteredUser((prevUserList) => {
-        return [...prevUserList, {name: uName, age: uAge}]
+        return [...prevUserList, {name: uName, age: uAge, collegeName: uCollegeName}]
       })
   }
 
